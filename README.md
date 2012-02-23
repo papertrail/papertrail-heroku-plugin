@@ -2,7 +2,6 @@
 
 Papertrail functionality for Heroku based projects.
 
-
 ## Quick Start
 
   $ heroku plugins:install https://github.com/paptertrail/heroku-paptertrail
@@ -13,10 +12,11 @@ Papertrail functionality for Heroku based projects.
 
 ## Integration tests
 
-Rename test_config.yml.example to test_config.yml, using a heroku test
-account (with no projects you are afraid of loosing!).
+WARNING: The tests use an existing Heroku and Papertrail account.
+WARNING: Proceed with caution or preferably, use test accounts
 
-Then run:
+1. Rename test_config.yml.example to test_config.yml
+2. Change the fields
+3. Run:
 
-  $ bundle exec rspec
-  $ bundle exec features
+  $bundle exec features
