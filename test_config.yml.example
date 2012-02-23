@@ -1,0 +1,19 @@
+heroku:
+
+  # WARNING! The tests create and destroy heroku apps, so don't provide
+  # credentials to a heroku account with production applications!
+  #
+  # Instead, create a test account to be on the safe side
+  email: user@example.org
+  token: 123123123123123123123123123123
+
+papertrail:
+
+  # TODO: get these from PT api?
+  syslog:
+    host: logs.papertrailapp.com
+    port: 12345_CONFIGURE_ME_IN_test_config.yml
+
+  addon:
+    api_url: https://papertrailapp.com/api/v1/systems/example1.json
+    token: abc12345ABCDEF123456
