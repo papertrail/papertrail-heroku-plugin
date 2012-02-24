@@ -48,9 +48,11 @@ When /^I install heroku\-papertrail$/ do
   this_repository = "file://#{Dir.pwd}"
   step %Q{I successfully run `heroku plugins:install #{this_repository}`}
 
+  repo_name = File.basename(Dir.pwd)
+
   #TODO: copy modified files in a sane way
   PLUGIN_FILES.each do |filename|
-    step %Q{I overwrite ".heroku/plugins/heroku-papertrail/#{filename}" with:},
+    step %Q{I overwrite ".heroku/plugins/#{repo_name}/#{filename}" with:},
       IO.read(filename)
   end
 end
