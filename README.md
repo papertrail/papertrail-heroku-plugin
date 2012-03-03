@@ -12,9 +12,9 @@ app logs on Papertrail.
       query   # optional search filter (Boolean)
 
 
-## Example
+## Examples
 
-Add Papertrail's Heroku [log management addon](https://addons.heroku.com/papertrail) to your
+Add Papertrail's Heroku log management [addon](https://addons.heroku.com/papertrail) to your
 app(s), then run `heroku pt:logs`. Examples:
 
     $ heroku pt:logs 
@@ -26,16 +26,13 @@ app(s), then run `heroku pt:logs`. Examples:
 
 ## Installation
 
-    $ heroku plugins:install https://github.com/paptertrail/heroku-plugin
+    $ heroku plugins:install https://github.com/papertrail/heroku-plugin
 
 
-## Development
+## Tests
 
-The tests use an existing Heroku and Papertrail account.
-Proceed with caution (and test accounts)
+Tests rely on existing Heroku and Papertrail accounts. Use test accounts and 
+proceed with caution.
 
-1. Rename test_config.yml.example to test_config.yml
-2. Change the fields
-3. Run:
-
-    $bundle exec features
+   cp test_config.yml.example test_config.yml
+   bundle exec features
