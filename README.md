@@ -34,5 +34,5 @@ app(s), then run `heroku pt:logs`. Examples:
 Tests rely on existing Heroku and Papertrail accounts. Use test accounts and 
 proceed with caution.
 
-   cp test_config.yml.example test_config.yml
-   bundle exec features
+    cp test_config.yml.example test_config.yml
+    bundle exec features
