@@ -44,7 +44,7 @@ Given /^it uses the papertrail addon$/ do
   end
 end
 
-When /^I install heroku\-papertrail$/ do
+When /^I install heroku\-plugin$/ do
   this_repository = "file://#{Dir.pwd}"
   step %Q{I successfully run `heroku plugins:install #{this_repository}`}
 

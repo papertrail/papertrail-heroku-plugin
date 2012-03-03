@@ -9,14 +9,14 @@ module Heroku::Command
       $stdout.flush if options[:flush]
     end
 
-    def tail
-      options = {:delay => 1} #TODO: configurable delay?
+    def logs
+      options = { :delay => 1 }
       options[:tail] = args.delete('-t')
       options[:query] = args
 
       token = heroku.config_vars(app)['PAPERTRAIL_API_TOKEN']
       if token.nil? or token.empty?
-        abort "First, please enable the Papertrail addon for this application"
+        abort "Please add the Papertrail addon to this application"
       end
 
       connection = Papertrail::Connection.new(:token => token)

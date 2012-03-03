@@ -17,7 +17,7 @@ Feature: options
     baz
 
     """
-    And I successfully run `heroku pt:tail ba` within the project
+    And I successfully run `heroku pt:logs ba` within the project
     Then I should see these logs:
     """
     bar
@@ -31,7 +31,7 @@ Feature: options
     foo1
 
     """
-    When I start `heroku pt:tail -t` within the project
+    When I start `heroku pt:logs -t` within the project
     And the following new logs:
     """
     foo2
@@ -53,7 +53,7 @@ Feature: options
     """
     bar
     """
-    And I start `heroku pt:tail -t ba` within the project
+    And I start `heroku pt:logs -t ba` within the project
     And the following new logs:
     """
     foo
@@ -75,7 +75,7 @@ Feature: options
     foo1
 
     """
-    When I start `heroku pt:tail -t` within the project
+    When I start `heroku pt:logs -t` within the project
     Then I should see these logs before Ctrl-C:
     """
     foo1
@@ -88,7 +88,7 @@ Feature: options
     foo1
 
     """
-    And I start `heroku pt:tail -t` within the project
+    And I start `heroku pt:logs -t` within the project
     And the following new logs:
     """
     foo2

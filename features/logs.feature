@@ -15,7 +15,7 @@ Feature: heroku integration
     restart
 
     """
-    When I successfully run `heroku pt:tail` within the project
+    When I successfully run `heroku pt:logs` within the project
     Then I should see these logs:
     """
     start server
@@ -28,7 +28,7 @@ Feature: heroku integration
     Given I have a rails app with git
     And it is on heroku
     And I install heroku-papertrail
-    When I run `heroku pt:tail` within the project
+    When I run `heroku pt:logs` within the project
     Then it should fail with:
     """
     First, please enable the Papertrail addon for this application
