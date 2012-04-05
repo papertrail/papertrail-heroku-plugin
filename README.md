@@ -27,3 +27,16 @@ app(s), then run `heroku pt:logs`. Examples:
 ## Installation
 
     $ heroku plugins:install https://github.com/papertrail/heroku-plugin
+
+## Tests
+
+Prerequisites (gems):
+
+* mocha
+* papertrail-cli
+* heroku
+
+
+Run with:
+
+    $ ruby test/papertrail_test.rb
