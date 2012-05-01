@@ -1,7 +1,12 @@
 # Papertrail Heroku plugin
 
-Extends `heroku` command-line app to also display, tail, and search Heroku
-app logs on Papertrail.
+Extends `heroku` command-line app to display, tail, and search Heroku app and 
+platform logs on [Papertrail](https://papertrailapp.com/).
+
+
+## Installation
+
+    $ heroku plugins:install https://github.com/papertrail/papertrail-heroku-plugin
 
 
 ## Usage
@@ -9,7 +14,7 @@ app logs on Papertrail.
     $ heroku pt:logs [-t] [query]
 
       -t      # continually stream logs (tail)
-      query   # optional search filter (Boolean)
+      query   # Boolean search filter
 
 
 ## Examples
@@ -24,10 +29,6 @@ app(s), then run `heroku pt:logs`. Examples:
     $ heroku pt:logs "State changed from" OR "Completed in"
 
 
-## Installation
-
-    $ heroku plugins:install https://github.com/papertrail/heroku-plugin
-
 ## Tests
 
 Prerequisites (gems):
@@ -35,7 +36,6 @@ Prerequisites (gems):
 * mocha
 * papertrail-cli
 * heroku
-
 
 Run with:
 
