@@ -14,13 +14,16 @@ module Heroku::Command
     def logs
       token = heroku.config_vars(app)['PAPERTRAIL_API_TOKEN']
       if token.nil? or token.empty?
-        abort 'Add the Papertrail addon to this application (https://addons.heroku.com/papertrail)'
+        abort 'Add the Papertrail addon to this application (see https://addons.heroku.com/papertrail)'
       end
 
       connection = Papertrail::Connection.new(:token => token)
 
       tail = args.delete('-t')
-      search_query = connection.query(args)
+      if args.length > 1
+        abort 'To search for phrases, enclose in quotes (see examples: https://github.com/papertrail/papertrail-heroku-plugin)'
+      end
+      search_query = connection.query(args.first)
 
       if tail
         loop do
