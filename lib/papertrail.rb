@@ -1,7 +1,7 @@
-require 'papertrail/connection.rb'
+require 'papertrail/connection'
 
 module Heroku::Command
-  class Pt < Base
+  class Pt < BaseWithApp
     DELAY = 1
 
     def self.search(search_query, options = {})
@@ -14,7 +14,7 @@ module Heroku::Command
     def logs
       token = heroku.config_vars(app)['PAPERTRAIL_API_TOKEN']
       if token.nil? or token.empty?
-        abort 'Please add the Papertrail addon to this application'
+        abort 'Add the Papertrail addon to this application (https://addons.heroku.com/papertrail)'
       end
 
       connection = Papertrail::Connection.new(:token => token)
