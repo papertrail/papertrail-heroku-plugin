@@ -16,6 +16,8 @@ platform logs on [Papertrail](https://papertrailapp.com/).
       -t      # continually stream logs (tail)
       query   # Boolean search filter
 
+    $ heroku addons:open papertrail
+
 
 ## Examples
 
@@ -28,13 +30,17 @@ Tail:
 
     $ heroku pt:logs -t
 
-Specify a Heroku app name, tail, and show only `router` logs:
+Specify a Heroku app name, tail, and show only logs containing `router`:
 
     $ heroku pt:logs --app wopr -t router
 
-Create a shortcut:
+Create shortcuts to invoke CLI or open Web interface:
 
     $ alias logs="heroku pt:logs --app wopr -t"
+    $ logs JoshuaController
+
+    $ alias pt="heroku addons:open --app wopr papertrail"
+    $ pt
 
 
 ## Advanced Examples
@@ -45,7 +51,7 @@ To search for quoted phrases, enclose entire query in double quotes
     $ heroku pt:logs "'Sent mail to' cron"
     $ heroku pt:logs -t "'status=50' OR 'Completed in'"
 
-Use parenthesis and exclusion (-):
+Use parenthesis and exclusion (`-`):
 
     $ heroku pt:logs --app wopr -t "'State changed' OR (router ('status=50' OR 'Error H'))"
     $ heroku pt:logs "router -'queue=0'"

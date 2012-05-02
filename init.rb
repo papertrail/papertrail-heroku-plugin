@@ -5,5 +5,5 @@ rescue LoadError
 end
 
 Heroku::Command::Help.group('Papertrail') do |group|
-  group.command 'pt:logs [-t] [query]', 'Show Papertrail logs (optional: tail; filter with query)'
+  group.command 'pt:logs [-t] [query]', 'Search and/or tail logs (optional: tail; search query)'
 end
