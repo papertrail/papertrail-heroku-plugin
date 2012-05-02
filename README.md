@@ -64,7 +64,7 @@ More: [Search syntax](http://help.papertrailapp.com/kb/how-it-works/search-synta
 Prerequisites (gems):
 
 * mocha
-* papertrail-cli
+* papertrail
 * heroku
 
 Run with:
