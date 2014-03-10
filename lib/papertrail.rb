@@ -12,7 +12,9 @@ module Heroku::Command
     end
 
     def logs
-      token = heroku.config_vars(app)['PAPERTRAIL_API_TOKEN']
+      config_vars = Heroku::Auth.api.get_config_vars(app).body
+
+      token = config_vars['PAPERTRAIL_API_TOKEN']
       if token.nil? or token.empty?
         abort 'Add the Papertrail addon to this application (see https://addons.heroku.com/papertrail)'
       end
