@@ -8,6 +8,8 @@ platform logs on [Papertrail](https://papertrailapp.com/).
 
     $ heroku plugins:install https://github.com/papertrail/papertrail-heroku-plugin
 
+The plugin includes all required dependencies.
+
 
 ## Usage
 
@@ -17,7 +19,6 @@ platform logs on [Papertrail](https://papertrailapp.com/).
       query   # Boolean search filter
 
     $ heroku addons:open papertrail
-
 
 ## Examples
 
