@@ -1,4 +1,4 @@
-require 'vendor/papertrail/event'
+require 'papertrail-heroku-plugin/vendor/papertrail/event'
 
 module Papertrail
   class SearchResult

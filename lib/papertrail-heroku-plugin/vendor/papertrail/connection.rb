@@ -1,8 +1,8 @@
 require 'forwardable'
 require 'openssl'
 
-require 'vendor/papertrail/http_client'
-require 'vendor/papertrail/search_query'
+require 'papertrail-heroku-plugin/vendor/papertrail/http_client'
+require 'papertrail-heroku-plugin/vendor/papertrail/search_query'
 
 module Papertrail
   class Connection

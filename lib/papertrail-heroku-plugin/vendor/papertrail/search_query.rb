@@ -1,4 +1,4 @@
-require 'vendor/papertrail/search_result'
+require 'papertrail-heroku-plugin/vendor/papertrail/search_result'
 
 module Papertrail
   class SearchQuery

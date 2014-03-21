@@ -1,4 +1,4 @@
-require 'vendor/papertrail/connection'
+require 'papertrail-heroku-plugin/vendor/papertrail/connection'
 
 module Heroku::Command
   class Pt < BaseWithApp
