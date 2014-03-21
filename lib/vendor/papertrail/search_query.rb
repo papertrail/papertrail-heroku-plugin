@@ -1,4 +1,4 @@
-require 'papertrail/search_result'
+require 'vendor/papertrail/search_result'
 
 module Papertrail
   class SearchQuery

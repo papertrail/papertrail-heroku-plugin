@@ -1,4 +1,4 @@
-require 'papertrail/event'
+require 'vendor/papertrail/event'
 
 module Papertrail
   class SearchResult

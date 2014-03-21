@@ -1,8 +1,8 @@
 require 'forwardable'
 require 'openssl'
 
-require 'papertrail/http_client'
-require 'papertrail/search_query'
+require 'vendor/papertrail/http_client'
+require 'vendor/papertrail/search_query'
 
 module Papertrail
   class Connection
