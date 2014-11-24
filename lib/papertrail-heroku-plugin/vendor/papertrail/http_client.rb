@@ -11,7 +11,7 @@ module Papertrail
     end
 
     def body
-      @body ||= Heroku::OkJson.decode(__getobj__.body)
+      @body ||= MultiJson.load(__getobj__.body)
     end
 
   end
