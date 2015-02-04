@@ -1,7 +1,6 @@
 var Heroku = require("heroku-client");
 var https = require("https");
 var qs = require("querystring");
-var strftime = require("strftime");
 
 exports.topics = [{
   name: "pt2",
@@ -40,8 +39,7 @@ exports.commands = [{
 var tailDelay = 1000;
 
 var printEvent = function(event) {
-  var received_at = strftime("%b %e %T", new Date(event.received_at));
-  console.log(received_at + " " + event.hostname + " " + event.program + ": " + event.message);
+  console.log(event.received_at + " " + event.hostname + " " + event.program + ": " + event.message);
 };
 
 var process = function(data) {

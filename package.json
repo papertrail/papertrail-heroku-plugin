@@ -21,7 +21,6 @@
   "author": "Larry Marburger",
   "license": "MIT",
   "dependencies": {
-    "heroku-client": "^1.9.1",
-    "strftime": "^0.8.2"
+    "heroku-client": "^1.9.1"
   }
 }
