@@ -22,7 +22,7 @@ The plugin includes all required dependencies.
 
 ## Examples
 
-Add Papertrail's Heroku [log management addon](https://addons.heroku.com/papertrail) to your
+Add Papertrail's Heroku [log management add-on](https://addons.heroku.com/papertrail) to your
 app(s), then run `heroku pt:logs`. Examples:
 
     $ heroku pt:logs
