@@ -1,7 +1,7 @@
 {
-  "name": "heroku-papertrail",
+  "name": "heroku-papertrail-plugin",
   "version": "0.0.1",
-  "description": "Search and/or tail logs (optional: tail; search query)",
+  "description": "Search and/or tail logs",
   "main": "index.js",
   "repository": {
     "type": "git",
