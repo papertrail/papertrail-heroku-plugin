@@ -58,16 +58,3 @@ Use parenthesis and exclusion (`-`):
     $ heroku pt:logs "router -'queue=0'"
 
 More: [Search syntax](http://help.papertrailapp.com/kb/how-it-works/search-syntax)
-
-
-## Tests
-
-Prerequisites (gems):
-
-* mocha
-* papertrail
-* heroku
-
-Run with:
-
-    $ ruby test/papertrail_test.rb
