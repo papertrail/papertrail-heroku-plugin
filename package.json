@@ -13,7 +13,10 @@
   "keywords": [
     "heroku-plugin",
     "papertrail",
-    "log"
+    "papertrailapp",
+    "log",
+    "logs",
+    "logging"
   ],
   "author": "Larry Marburger",
   "license": "MIT",

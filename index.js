@@ -4,14 +4,17 @@ var strftime = require('strftime');
 
 exports.topics = [{
   name: "pt2",
-  description: "Search and/or tail logs (optional: tail; search query)"
+  description: "Search and/or tail logs"
 }];
 
 exports.commands = [{
   topic: "pt2",
   command: "logs",
-  description: "Search and/or tail logs (optional: tail; search query)",
-  help: "Search and/or tail logs (optional: tail; search query)",
+  description: "Search and/or tail logs",
+  help: "\n\
+ Shows the most recent logs matching an optional search query. \n\
+ Use --tail to stream new logs in as they're received.",
+
   needsApp: true,
   needsAuth: true,
   run: function (context) {
@@ -19,7 +22,7 @@ exports.commands = [{
     heroku.apps(context.app).configVars().info(function (err, config) {
       if (err) { throw err; }
       if (!config.PAPERTRAIL_API_TOKEN) {
-        console.error('Add the Papertrail addon to this application: https://addons.heroku.com/papertrail');
+        console.error('Add the Papertrail add-on to this application: https://addons.heroku.com/papertrail');
         process.exit(1);
       }
 
