@@ -54,7 +54,7 @@ var search = function(token, query, tail, minId) {
     path += "?";
     if (query) { path += qs.stringify({q: query}); }
     if (path && query) { path += "&"; }
-    if (query) { path += qs.stringify({min_id: minId}); }
+    if (minId) { path += qs.stringify({min_id: minId}); }
   }
 
   var options = {
