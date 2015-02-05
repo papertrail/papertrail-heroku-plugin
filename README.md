@@ -6,7 +6,7 @@ platform logs on [Papertrail](https://papertrailapp.com/).
 
 ## Installation
 
-    $ heroku plugins:install https://github.com/papertrail/papertrail-heroku-plugin
+    $ heroku plugins:install heroku-papertrail
 
 The plugin includes all required dependencies.
 

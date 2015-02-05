@@ -3,12 +3,12 @@ var https = require("https");
 var qs = require("querystring");
 
 exports.topics = [{
-  name: "pt2",
+  name: "pt",
   description: "Search and/or tail logs"
 }];
 
 exports.commands = [{
-  topic: "pt2",
+  topic: "pt",
   command: "logs",
   description: "Search and/or tail logs",
   help: "\n\

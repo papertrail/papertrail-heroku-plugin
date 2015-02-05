@@ -1,5 +1,5 @@
 {
-  "name": "heroku-papertrail-plugin",
+  "name": "heroku-papertrail",
   "version": "0.0.1",
   "description": "Search and/or tail logs",
   "main": "index.js",
