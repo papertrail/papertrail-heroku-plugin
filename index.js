@@ -17,7 +17,7 @@ exports.commands = [{
 
   needsApp: true,
   needsAuth: true,
-  flags: [{name: "tail", char: 0x0074, hasValue: false}],
+  flags: [{name: "tail", char: "t", hasValue: false}],
   args: [{name: "query", optional: true}],
   run: function (context) {
     new Heroku({token: context.auth.password})
