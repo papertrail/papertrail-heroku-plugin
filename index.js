@@ -12,12 +12,11 @@ exports.commands = [{
   command: "logs",
   description: "Search and/or tail logs",
   help: "\n\
- Shows the most recent logs matching an optional search query. \n\
- Use --tail to stream new logs in as they're received.",
+ Shows the most recent logs matching an optional search query.",
 
   needsApp: true,
   needsAuth: true,
-  flags: [{name: "tail", char: "t", hasValue: false}],
+  flags: [{name: "tail", char: "t", hasValue: false, description: "stream new logs in as they're received"}],
   args: [{name: "query", optional: true}],
   run: function (context) {
     new Heroku({token: context.auth.password})
