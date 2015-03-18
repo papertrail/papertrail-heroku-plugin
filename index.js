@@ -9,7 +9,6 @@ exports.topics = [{
 
 exports.commands = [{
   topic: "pt",
-  command: "logs",
   description: "Search and/or tail logs",
   help: "\n\
  Shows the most recent logs matching an optional search query.",
