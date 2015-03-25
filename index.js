@@ -1,13 +1,9 @@
 var Heroku = require("heroku-client");
 var https = require("https");
 var qs = require("querystring");
+var extend = require("util")._extend;
 
-exports.topics = [{
-  name: "pt",
-  description: "Search and/or tail logs"
-}];
-
-exports.commands = [{
+var logsCommand = {
   topic: "pt",
   description: "Search and/or tail logs",
   help: "\n\
@@ -31,7 +27,18 @@ exports.commands = [{
         search(config.PAPERTRAIL_API_TOKEN, context.args.query, context.args.tail);
       });
   }
+}
+
+var legacyLogsCommand = extend({}, logsCommand);
+legacyLogsCommand.command = 'logs';
+legacyLogsCommand.description = "Identical to `pt` kept only for backwards compatibility",
+
+exports.topics = [{
+  name: "pt",
+  description: "Search and/or tail logs"
 }];
+
+exports.commands = [logsCommand, legacyLogsCommand];
 
 
 var tailDelay = 1000;
