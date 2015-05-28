@@ -68,6 +68,6 @@ module.exports = {
     if (!config.PAPERTRAIL_API_TOKEN) {
       throw new Error("Add the Papertrail add-on to this application: https://addons.heroku.com/papertrail");
     }
-    search(config.PAPERTRAIL_API_TOKEN, context.args.query, context.args.tail);
+    search(config.PAPERTRAIL_API_TOKEN, context.args.query, context.flags.tail);
   })
 };
