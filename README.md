@@ -15,14 +15,14 @@ platform logs on [Papertrail](https://papertrailapp.com/).
 
 ## Installation
 
-    $ heroku plugins:install https://github.com/papertrail/papertrail-heroku-plugin
+    $ heroku plugins:install heroku-papertrail
 
 The plugin includes all required dependencies.
 
 
 ## Usage
 
-    $ heroku pt:logs [-t] [query]
+    $ heroku pt [-t] [query]
 
       -t      # continually stream logs (tail)
       query   # Boolean search filter
@@ -31,22 +31,22 @@ The plugin includes all required dependencies.
 
 ## Examples
 
-Add Papertrail's Heroku [log management addon](https://addons.heroku.com/papertrail) to your
-app(s), then run `heroku pt:logs`. Examples:
+Add Papertrail's Heroku [log management add-on](https://addons.heroku.com/papertrail) to your
+app(s), then run `heroku pt`. Examples:
 
-    $ heroku pt:logs
+    $ heroku pt
 
 Tail:
 
-    $ heroku pt:logs -t
+    $ heroku pt -t
 
 Specify a Heroku app name, tail, and show only logs containing `router`:
 
-    $ heroku pt:logs --app wopr -t router
+    $ heroku pt --app wopr -t router
 
 Create shortcuts to invoke CLI or open Web interface:
 
-    $ alias logs="heroku pt:logs --app wopr -t"
+    $ alias logs="heroku pt --app wopr -t"
     $ logs JoshuaController
 
     $ alias pt="heroku addons:open --app wopr papertrail"
@@ -58,25 +58,12 @@ Create shortcuts to invoke CLI or open Web interface:
 To search for quoted phrases, enclose entire query in double quotes 
 (consistent with other shell tools):
 
-    $ heroku pt:logs "'Sent mail to' cron"
-    $ heroku pt:logs -t "'status=50' OR 'Completed in'"
+    $ heroku pt "'Sent mail to' cron"
+    $ heroku pt -t "'status=50' OR 'Completed in'"
 
 Use parenthesis and exclusion (`-`):
 
-    $ heroku pt:logs --app wopr -t "'State changed' OR (router ('status=50' OR 'Error H'))"
-    $ heroku pt:logs "router -'queue=0'"
+    $ heroku pt --app wopr -t "'State changed' OR (router ('status=50' OR 'Error H'))"
+    $ heroku pt "router -'queue=0'"
 
 More: [Search syntax](http://help.papertrailapp.com/kb/how-it-works/search-syntax)
-
-
-## Tests
-
-Prerequisites (gems):
-
-* mocha
-* papertrail
-* heroku
-
-Run with:
-
-    $ ruby test/papertrail_test.rb

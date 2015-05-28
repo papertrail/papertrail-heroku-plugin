@@ -1,0 +1,26 @@
+{
+  "name": "heroku-papertrail",
+  "version": "0.0.3",
+  "description": "Search and/or tail logs",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/papertrail/papertrail-heroku-plugin"
+  },
+  "bugs": {
+    "url": "https://github.com/papertrail/papertrail-heroku-plugin/issues"
+  },
+  "keywords": [
+    "heroku-plugin",
+    "papertrail",
+    "papertrailapp",
+    "log",
+    "logs",
+    "logging"
+  ],
+  "author": "Larry Marburger",
+  "license": "MIT",
+  "dependencies": {
+    "heroku-cli-util": "^4.0.2"
+  }
+}
