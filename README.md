@@ -1,13 +1,4 @@
-# Deprecated
-
-This plugin has been deprecated. Instead,
-install [this newer plugin](https://www.npmjs.com/package/heroku-papertrail)
-with:
-
-    $ heroku plugins:install heroku-papertrail
-
-
-### Papertrail Heroku plugin (deprecated)
+# Papertrail Heroku plugin
 
 Extends `heroku` command-line app to display, tail, and search Heroku app and 
 platform logs on [Papertrail](https://papertrailapp.com/).
