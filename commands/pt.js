@@ -61,6 +61,7 @@ module.exports = {
   help: "Shows the most recent logs matching an optional search query.",
   needsApp: true,
   needsAuth: true,
+  default: true,
   flags: [{name: "tail", char: "t", hasValue: false, description: "stream new logs in as they're received"}],
   args: [{name: "query", optional: true}],
   run: h.command(function* (context, heroku) {
