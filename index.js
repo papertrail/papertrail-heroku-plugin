@@ -2,10 +2,10 @@
 let extend      = require("util")._extend;
 let logsCommand = require('./commands/pt');
 
-exports.topics = [{
+exports.topic = {
   name: "pt",
   description: "Search and/or tail logs"
-}];
+};
 
 let legacyLogsCommand = extend({}, logsCommand);
 legacyLogsCommand.command = 'logs';
