@@ -56,8 +56,6 @@ var search = function(token, query, tail, minId) {
 };
 
 module.exports = {
-  topic: "pt",
-  description: "Search and/or tail logs",
   help: "Shows the most recent logs matching an optional search query.",
   needsApp: true,
   needsAuth: true,
