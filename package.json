@@ -21,6 +21,7 @@
   "author": "Larry Marburger",
   "license": "MIT",
   "dependencies": {
+    "co": "^4.6.0",
     "heroku-cli-util": "^4.0.2"
   }
 }

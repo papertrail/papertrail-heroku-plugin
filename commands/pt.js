@@ -2,6 +2,7 @@
 var h      = require('heroku-cli-util');
 var https  = require("https");
 var qs     = require("querystring");
+const co   = require("co");
 
 var tailDelay = 1000;
 
@@ -59,14 +60,13 @@ module.exports = {
   help: "Shows the most recent logs matching an optional search query.",
   needsApp: true,
   needsAuth: true,
-  default: true,
   flags: [{name: "tail", char: "t", hasValue: false, description: "stream new logs in as they're received"}],
   args: [{name: "query", optional: true}],
-  run: h.command(function* (context, heroku) {
+  run: co.wrap(h.command(function* (context, heroku) {
     var config = yield heroku.apps(context.app).configVars().info();
     if (!config.PAPERTRAIL_API_TOKEN) {
       throw new Error("Add the Papertrail add-on to this application: https://addons.heroku.com/papertrail");
     }
     search(config.PAPERTRAIL_API_TOKEN, context.args.query, context.flags.tail);
-  })
+  }))
 };
