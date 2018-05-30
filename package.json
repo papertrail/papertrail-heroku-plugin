@@ -1,6 +1,6 @@
 {
   "name": "heroku-papertrail",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Search and/or tail logs",
   "main": "index.js",
   "repository": {
@@ -18,7 +18,7 @@
     "logs",
     "logging"
   ],
-  "author": "Larry Marburger",
+  "author": "Papertrail",
   "license": "MIT",
   "dependencies": {
     "co": "^4.6.0",
